@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Restaurant collection and inserts the delicious menu items below
+// This file empties the Restaurant collection and inserts the delicious menu items below and some orders.
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/restaurantmenuapp"
 );
 
-const orderSeed = [
+const menuSeed = [
   {
     item: "Brie Butt Burger",
     description:
@@ -35,6 +35,48 @@ const orderSeed = [
     description: "This burger is made of endangered species.",
     price: "$99.99",
     details: "Kobe certified",
+    date: new Date(Date.now()),
+  },
+];
+
+db.Menu.remove({})
+  .then(() => db.Menu.collection.insertMany(menuSeed))
+  .then((data) => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+
+const orderSeed = [
+  {
+    item: "Brie Butt Burger",
+    price: "$15.99",
+    name: "Big Brie",
+    number: "1",
+    date: new Date(Date.now()),
+  },
+  {
+    item: "Booty Burger",
+    price: "$15.99",
+    name: "Booty Brown",
+    number: "2",
+    date: new Date(Date.now()),
+  },
+  {
+    item: "Burger-Burger, Jr.",
+    price: "$12.99",
+    name: "Sammy Davis, Jr-Jr.",
+    number: "3",
+    date: new Date(Date.now()),
+  },
+  {
+    item: "Brontasauras Burger",
+    price: "$99.99",
+    name: "Richie Rich",
+    number: "4",
     date: new Date(Date.now()),
   },
 ];
