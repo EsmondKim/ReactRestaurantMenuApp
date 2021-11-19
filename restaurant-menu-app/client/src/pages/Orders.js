@@ -1,6 +1,6 @@
 import React from "react";
 
-function Orders() {
+function OrdersPage() {
   return (
     <div>
       <h1>Here are all the orders.</h1>;
@@ -8,4 +8,4 @@ function Orders() {
   );
 }
 
-export default Orders;
+export default OrdersPage;

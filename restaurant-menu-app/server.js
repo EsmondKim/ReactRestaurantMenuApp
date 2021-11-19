@@ -17,7 +17,12 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/RestaurantMenuApp"
+  process.env.MONGODB_URI || "mongodb://localhost/restaurantmenuapp",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  }
 );
 
 // Start the API server

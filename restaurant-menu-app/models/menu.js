@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const menuSchema = new Schema({
-  item: { type: String, required: true },
-  price: { type: String, required: true },
-  details: { type: String, required: true },
+  item: { type: String },
+  description: { type: String },
+  price: { type: String },
+  details: { type: String },
   date: { type: Date, default: Date.now },
 });
 

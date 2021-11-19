@@ -1,6 +1,7 @@
+// const { model } = require("mongoose");
 const db = require("../models");
 
-// Defining methods for the restaurantController
+// Defining methods for the menuController
 module.exports = {
   findAll: function (req, res) {
     db.Menu.find(req.query)

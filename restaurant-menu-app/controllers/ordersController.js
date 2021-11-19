@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/model");
 
 // Defining methods for the restaurantController
 module.exports = {

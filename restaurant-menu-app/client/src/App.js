@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Menu from "./pages/Menu";
-import Orders from "./pages/Orders";
+import MenuPage from "./pages/Menu";
+import OrdersPage from "./pages/Orders";
 import Welcome from "./pages/Welcome";
 import Nav from "./components/Nav";
 
@@ -15,10 +15,10 @@ function App() {
             <Welcome />
           </Route>
           <Route exact path={["/menu"]}>
-            <Menu />
+            <MenuPage />
           </Route>
           <Route exact path={["/orders"]}>
-            <Orders />
+            <OrdersPage />
           </Route>
         </Switch>
       </div>

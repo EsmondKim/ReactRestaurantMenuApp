@@ -1,9 +1,14 @@
 const router = require("express").Router();
-const orderRoutes = require("./orders");
+// const ordersRoutes = require("./orders");
 const menuRoutes = require("./menu");
 
-// Order routes
-router.use("/orders", orderRoutes);
+// Menu and Order routes
+// router.use("/orders", ordersRoutes);
 router.use("/menu", menuRoutes);
+
+// If no API routes are hit, send the React app
+router.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 module.exports = router;
